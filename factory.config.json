@@ -1,0 +1,69 @@
+{
+  "factory": {
+    "repo": "mm-mazhar/software-factory",
+    "boxNamePrefix": "factory-",
+    "boxLabel": "factory",
+    "busyLabel": "busy",
+    "branchPrefix": "factory/issue-",
+    "gitAuthor": {
+      "name": "Maz",
+      "email": "mm-mazhar@users.noreply.github.com"
+    },
+    "allowedActors": [
+      "mm-mazhar"
+    ],
+    "browser": true,
+    "waitForWorkerMinutes": 20,
+    "agentTimeoutMinutes": 25,
+    "commandTimeoutMinutes": 15
+  },
+  "labels": {
+    "ready": "ready",
+    "running": "factory:running",
+    "review": "factory:review",
+    "needsAttention": "factory:needs-attention"
+  },
+  "agents": {
+    "claude": {
+      "description": "Claude Code signed in with a Claude subscription. The token comes from `claude setup-token`. For an API key see references/agents.md in the skill.",
+      "auth": [
+        {
+          "secret": "CLAUDE_CODE_OAUTH_TOKEN",
+          "env": "CLAUDE_CODE_OAUTH_TOKEN"
+        }
+      ],
+      "boxSettings": [
+        {
+          "path": "/workspace/home/.claude/settings.json",
+          "format": "json",
+          "values": {
+            "model": "haiku",
+            "effortLevel": "low"
+          }
+        }
+      ],
+      "command": "claude -p \"$(cat {prompt})\" --dangerously-skip-permissions --output-format text > {summary}"
+    }
+  },
+  "repos": [
+    {
+      "repo": "mm-mazhar/cli",
+      "baseBranch": "master",
+      "setup": [
+        "make all"
+      ],
+      "checks": [
+        "make codestyle",
+        "make test"
+      ],
+      "exclude": []
+    }
+  ],
+  "workers": [
+    {
+      "id": "claude-01",
+      "agent": "claude",
+      "enabled": true
+    }
+  ]
+}
