@@ -56,6 +56,12 @@ node --env-file=.env scripts/build-snapshot.mjs <worker id> --yes
 node --env-file=.env scripts/apply-box-settings.mjs
 ```
 
+Delete the old worker Box
+
+```
+node --env-file=.env scripts/delete-workers.mjs --yes
+```
+
 The first shows who is free and who is busy. The second frees a worker that a cancelled run left marked busy. The third writes a changed model or effort setting into the Boxes that already exist.
 
 ## Adding Another Repo Later
