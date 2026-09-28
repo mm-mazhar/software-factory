@@ -51,7 +51,8 @@
       "repo": "mm-mazhar/cli",
       "baseBranch": "master",
       "setup": [
-        "make all"
+        "python3 -m venv --prompt httpie venv",
+        "source venv/bin/activate && pip install -e ."
       ],
       "checks": [
         "make codestyle",
