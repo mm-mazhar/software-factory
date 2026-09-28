@@ -1,0 +1,13 @@
+[
+  {
+    "repo": "mm-mazhar/cli",
+    "title": "A small, self-contained feature",
+    "body": "One or two sentences on what is wanted and why.\n\n- An acceptance point the agent can check.\n- Another one.\n- Name the checks that must keep passing, if the repo has any."
+  },
+  {
+    "repo": "mm-mazhar/cli",
+    "title": "A second feature, forced onto one agent type",
+    "labels": ["agent:claude"],
+    "body": "Same shape as above. The labels list is optional."
+  }
+]
