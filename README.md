@@ -29,9 +29,12 @@ worker or an agent type, how to read the labels, and the everyday commands. -->
    - This reads `factory.config.json` and creates the Boxes for your workers (currently 1 Box named `factory-claude-01`).
    
 8. Test with Demo Issues
-    Create sample issues to test end-to-end:
-
-    - `node --env-file=.env scripts/create-demo-issues.mjs --yes`
+   - Create sample issues to test end-to-end:
+   - Go to https://github.com/mm-mazhar/<target-repo>/settings
+   - Scroll to "Features"
+   - Check the Issues checkbox
+   - Save
+   - `node --env-file=.env scripts/create-demo-issues.mjs --yes`
 
 ## Everyday commands
 
