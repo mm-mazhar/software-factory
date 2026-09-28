@@ -21,6 +21,7 @@ worker or an agent type, how to read the labels, and the everyday commands. -->
    - Adds webhook to the app repo
    - Creates labels (`ready`, `factory:running`, `factory:review`, `factory:needs-attention`)
    - Installs the workflow file
+   - Merge
 7. Provision Workers
    After that, set up your worker pool:
 
