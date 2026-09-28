@@ -42,7 +42,8 @@
           }
         }
       ],
-      "command": "claude -p \"$(cat {prompt})\" --dangerously-skip-permissions --output-format text > {summary}"
+      "command": "claude -p \"$(cat {prompt})\" --dangerously-skip-permissions --output-format text > {summary}",
+      "snapshotId": "df6da9e9-8960-4654-94ac-95d5b7a86f17"
     }
   },
   "repos": [

@@ -10,6 +10,11 @@
 # Node, git, Claude Code and Codex already installed.
 set -euo pipefail
 
+# --- OS packages ---------------------------------------------------------
+echo "--- installing OS packages"
+sudo apt-get update -qq
+sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3-venv > /dev/null
+
 # --- Agent skills (example) ------------------------------------------------
 # Installs one skill globally for the listed agents. Claude Code reads
 # ~/.claude/skills, Codex reads ~/.agents/skills.
@@ -48,5 +53,7 @@ add_skill() {
 echo "--- check"
 node --version
 git --version
+python3 --version
+python3 -m venv --help > /dev/null
 # claude --version
 # codex --version

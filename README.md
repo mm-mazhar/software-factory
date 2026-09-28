@@ -46,6 +46,12 @@ node --env-file=.env scripts/status.mjs
 node --env-file=.env scripts/release-worker.mjs <worker id>
 ```
 
+if worker needs to be re-built
+
+```
+node --env-file=.env scripts/build-snapshot.mjs <worker id> --yes
+```
+
 ```bash
 node --env-file=.env scripts/apply-box-settings.mjs
 ```
