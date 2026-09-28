@@ -12,7 +12,7 @@ worker or an agent type, how to read the labels, and the everyday commands. -->
 1. set the `.env` vars
 2. `npm ping`
 3. `npm install --verbose`
-4. `node --env-file=.env scripts/smoke-test.mjs claude`
+4. `node --env-file=.env scripts/check-setup.mjs`
 5. `node --env-file=.env scripts/smoke-test.mjs claude --yes`
 6. `node --env-file=.env scripts/install-trigger.mjs --yes`
    
